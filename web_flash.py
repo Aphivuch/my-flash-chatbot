@@ -11,14 +11,12 @@ st.write("🤖 **รุ่นความเร็วสูง (AI-3.5-flash.py)
 st.markdown("---")
 
 # --- 🔑 ตั้งค่าคีย์และการเชื่อมต่อ ---
-API_KEY = "AQ.Ab8RN6LifQuwD6g61QJ2EISTjFlJ6GcqTJj48TxXJnViBU-5KA"
-
-# --- 🔑 ตั้งค่าคีย์และการเชื่อมต่อ ---
-# สั่งให้ดึงกุญแจลับจากระบบ Secrets หลังบ้านแทนการพิมพ์รหัสลงในโค้ดตรงๆ
+# ระบบจะดึงกุญแจลับจาก Secrets หลังบ้านบน Streamlit Cloud อัตโนมัติ (ปลอดภัย 100%)
 if "GEMINI_API_KEY" in st.secrets:
     API_KEY = st.secrets["GEMINI_API_KEY"]
 else:
-    API_KEY = "พิมพ์รหัสคีย์ของคุณตรงนี้เอาไว้ใช้รันในคอมตัวเอง"
+    # เผื่อไว้ใช้ตอนคุณรันเปิดเล่นทดสอบในคอมตัวเอง ให้เอาคีย์ใหม่วางตรงนี้ได้ครับ
+    API_KEY = "ใส่คีย์จริงของคุณตรงนี้สำหรับรันในคอม"
 
 if "client" not in st.session_state:
     try:
