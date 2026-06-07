@@ -13,6 +13,13 @@ st.markdown("---")
 # --- 🔑 ตั้งค่าคีย์และการเชื่อมต่อ ---
 API_KEY = "AQ.Ab8RN6LifQuwD6g61QJ2EISTjFlJ6GcqTJj48TxXJnViBU-5KA"
 
+# --- 🔑 ตั้งค่าคีย์และการเชื่อมต่อ ---
+# สั่งให้ดึงกุญแจลับจากระบบ Secrets หลังบ้านแทนการพิมพ์รหัสลงในโค้ดตรงๆ
+if "GEMINI_API_KEY" in st.secrets:
+    API_KEY = st.secrets["GEMINI_API_KEY"]
+else:
+    API_KEY = "พิมพ์รหัสคีย์ของคุณตรงนี้เอาไว้ใช้รันในคอมตัวเอง"
+
 if "client" not in st.session_state:
     try:
         st.session_state.client = genai.Client(api_key=API_KEY)
